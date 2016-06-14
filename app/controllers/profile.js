@@ -17,6 +17,15 @@ export default Ember.Controller.extend(SessionMixin, {
 
   isFollowing: Ember.computed('model', 'model.user.followers', 'sessionService.authenticatedUserid', function() {
     return this.get('model.user.followers').isAny('id', this.get('sessionService.authenticatedUserid'));
-  })
+  }),
 
+  actions: {
+    follow: function() {
+
+    },
+
+    unfollow: function() {
+
+    }
+  }
 });

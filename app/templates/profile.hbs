@@ -27,12 +27,11 @@
 
       <div class="follow-container">
         {{#if isFollowing}}
-          <button {{action 'unfollow'}} class="red">Unfollow</button>
+          <button {{action (action 'unfollow')}} class="red">Unfollow</button>
         {{else}}
-          <button {{action 'follow'}}>Follow</button>
+          <button {{action (action 'follow')}}>Follow</button>
         {{/if}}
       </div>
-
     </ul>
   </div>
 </div>
@@ -46,7 +45,7 @@
   </aside>
 
   <main>
-  	{{liquid-outlet}}
+    {{liquid-outlet}}
   </main>
 
 </div>

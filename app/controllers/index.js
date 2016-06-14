@@ -8,20 +8,31 @@ export default Ember.Controller.extend(SessionMixin, {
   }),
 
   actions: {
-    onLogin: function() {
+    login: function() {
       var username = this.get('username');
       var password = this.get('password');
 
       if (!Ember.isEmpty(username) && !Ember.isEmpty(password)) {
-        this.get('sessionService').setProperties({
-          username: 'robertdotfrank',
-          userid: 1
-        });
-        this.transitionToRoute('home');
-      } else {
-        this.set('errorMessage', 'Wrong username or password!');
-      }
+        this.store.findAll('user')
+          .then((users) => {
+            let record = users.findBy('username', username);
+
+            if (record) {
+              this.get('sessionService').setProperties({
+                username: record.get('username'),
+                userid: record.get('id')
+              });
+
+              this.transitionToRoute('home');
+            } else {
+              this.set('errorMessage', 'Wrong username or password!');
+            }
+            
+          })
+          .catch(() => {
+            this.set('errorMessage', 'Wrong username or password!');
+          });
+      } 
     }
   }
-
 });
