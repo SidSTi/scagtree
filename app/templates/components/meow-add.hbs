@@ -1,2 +1,4 @@
-<img class="avatar" src={{avatarUrl}}/>
-<button class="card bubble">Tell us about your cat!</button>
+{{#if isAvatarVisible}}
+  <img class="avatar" src={{avatar}}/>
+{{/if}}
+<input class="meow-input {{if (eq size "sm") "sm" "default"}} card bubble" type="text" placeholder="Tell us about your cat!"/><button class="meow" {{action (action "meow")}}>Meow</button>

@@ -5,8 +5,18 @@ export default Mirage.Factory.extend({
   username: function(i) {
     if (i === 0) {
       return 'robertdotfrank';
+    } else if (i === 1) {
+      return 'sid_vicious';
     }
     return faker.internet.userName().toLowerCase();
+  },
+  password: function(i) {
+    if (i === 0) {
+      return 'robertdotfrank';
+    } else if (i === 1) {
+      return 'sid_vicious';
+    }
+    return 'abc';
   },
   description: function() {
     return faker.lorem.sentences(numberRandom(2, 3));
@@ -16,6 +26,7 @@ export default Mirage.Factory.extend({
   },
   meows: null,
   cats: null,
+  dogs: null,
   following: null,
   followers: null,
   avatar: function(i) {

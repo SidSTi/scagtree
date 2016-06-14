@@ -1,0 +1,8 @@
+{{#each pets as |pet|}}
+  {{pet-detail pet=pet onRevive=onRevive onTrash=onTrash}}
+{{else}}
+  <div class="no-cats">
+    <div class="icon"></div>
+    <p>There are no cats to display.</p>
+  </div>
+{{/each}}

@@ -15,6 +15,11 @@
         <p>{{model.user.cats.length}}</p>
       {{/link-to}}
 
+      {{#link-to "profile.dogs" tagName="li" id="link-dogs"}}
+        <h4>Dogs</h4>
+        <p>{{model.user.dogs.length}}</p>
+      {{/link-to}}
+
       <li>
         <h4>Following</h4>
         <p>{{model.user.following.length}}</p>
@@ -27,12 +32,11 @@
 
       <div class="follow-container">
         {{#if isFollowing}}
-          <button {{action 'unfollow'}} class="red">Unfollow</button>
+          <button {{action (action 'unfollow')}} class="red">Unfollow</button>
         {{else}}
-          <button {{action 'follow'}}>Follow</button>
+          <button {{action (action 'follow')}}>Follow</button>
         {{/if}}
       </div>
-
     </ul>
   </div>
 </div>
@@ -46,7 +50,7 @@
   </aside>
 
   <main>
-  	{{liquid-outlet}}
+    {{liquid-outlet}}
   </main>
 
 </div>

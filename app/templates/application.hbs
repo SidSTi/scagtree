@@ -1,7 +1,7 @@
 <header>
   <div class="page-container">
 
-    <div class="logo">Scagtree</div>
+    <div class="logo">{{#link-to "home"}}ScagTree{{/link-to}}</div>
 
     {{#if isAuthenticated}}
       <nav>
@@ -10,8 +10,6 @@
         {{#link-to "profile" authenticatedUserid}}
           @{{authenticatedUsername}}
         {{/link-to}}
-
-        <button class="meow">Meow</button>
       </nav>
     {{/if}}
 

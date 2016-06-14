@@ -28,9 +28,19 @@ function catsForUser(cats, userid) {
   }, []);
 }
 
+function dogsForUser(dogs, userid) {
+  return dogs.reduce((list, dog) => {
+    if (dog.user === userid) {
+      list.push(dog.id);
+    }
+    return list;
+  }, []);
+}
+
 export default function(server, random = true) {
   let meows = [];
   let cats = [];
+  let dogs = [];
   let users = [];
 
   let meowCount = random ? numberRandom(9, 12) : 9;
@@ -45,11 +55,16 @@ export default function(server, random = true) {
     cats.push(server.create('cat', {
       user: i >= 3 && random ? numberRandom(1, 3) : userIdFromIndex(i),
     }));
+
+    dogs.push(server.create('dog', {
+      user: i >= 3 && random ? numberRandom(1, 3) : userIdFromIndex(i),
+    }));
   }
 
   for (let i = 0; i < 3; i++) {
     users.push(server.create('user', {
       meows: meowsForUser(meows, i + 1),
+      dogs: dogsForUser(dogs, i + 1),
       cats: catsForUser(cats, i + 1),
       followers: [],
       following: []

@@ -4,10 +4,14 @@ export default Ember.Component.extend({
 
   classNames: ['meow-add'],
 
-  avatarUrl: Ember.computed('user', {
-    get() {
-      return this.get('user.avatar');
+  actions: {
+    meow: function(){
+      let meow = this.$('.meow-input').val();
+      
+      return this.attrs.onMeow(meow)
+        .then(() => {
+          this.$('.meow-input').val('');
+        });;
     }
-  })
-
+  }
 });

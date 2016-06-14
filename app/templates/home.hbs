@@ -4,7 +4,7 @@
   </aside>
 
   <main>
-    {{meow-add user=model.user}}
-    {{meow-list meows=model.meows}}
+  {{meow-add avatar=model.user.avatar isAvatarVisible=true onMeow=(action "meow")}}
+  {{meow-list meows=model.meows}}
   </main>
 </div>

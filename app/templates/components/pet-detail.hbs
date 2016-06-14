@@ -1,0 +1,21 @@
+<img class="picture {{if pet.dead 'dead'}}" src={{pet.picture}}/>
+<div class="info">
+  <span class={{if pet.dead 'dead'}}>
+    <span>{{pet.name}}</span>
+    <span>
+      Gender: {{pet.gender}}, Lives: {{pet.lives}}, Dead: {{if pet.dead 'Yes' 'No'}}
+    </span>
+    <span>{{pet.description}}</span>
+  </span>
+  {{#if (gt pet.lives 0)}}
+    {{#if pet.dead}}
+      <button class="revive" {{action (action this.attrs.onRevive pet)}}>
+        <img src="/images/revive-icon.jpg"/>
+      </button>
+    {{else}}
+      <button class="trash" {{action (action this.attrs.onTrash pet)}}>
+        <img src="/images/trash-icon.png"/>
+      </button>
+    {{/if}}
+  {{/if}}
+</div>

@@ -1,3 +1,6 @@
 <main>
-  {{meow-list meows=model}}
+  {{#if (eq model.id authenticatedUserid)}}
+    {{meow-add avatar=model.avatar isAvatarVisible=false size="sm" onMeow=(action "meow")}}
+  {{/if}}
+  {{meow-list meows=model.meows}}
 </main>
