@@ -6,7 +6,7 @@ export default Mirage.Factory.extend({
     if (i === 0) {
       return 'robertdotfrank';
     } else if (i === 1) {
-      return 'sid_vicious'
+      return 'sid_vicious';
     }
     return faker.internet.userName().toLowerCase();
   },
@@ -14,7 +14,7 @@ export default Mirage.Factory.extend({
     if (i === 0) {
       return 'robertdotfrank';
     } else if (i === 1) {
-      return 'sid_vicious'
+      return 'sid_vicious';
     }
     return 'abc';
   },

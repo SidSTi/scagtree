@@ -4,7 +4,11 @@
   </aside>
 
   <main>
-    {{meow-add user=model.user}}
-    {{meow-list meows=model.meows}}
+  <div class="meow-add">
+    <img class="avatar" src={{model.user.avatar}}/>
+    <input class="meow-input card bubble" placeholder="Tell us about your cat!"/><button class="meow" {{action (action "meow")}}>Meow</button>
+  </div>
+{{!--     {{meow-add user=model.user}}
+ --}}    {{meow-list meows=model.meows}}
   </main>
 </div>
