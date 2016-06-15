@@ -3,6 +3,8 @@ export default function() {
 
   this.get('/cats/:id');
   this.put('/cats/:id');
+  this.get('/dogs/:id');
+  this.put('/dogs/:id');
   this.post('/meows', function({ meows }, request) {
     let attrs = JSON.parse(request.requestBody).meow;
 

@@ -21,11 +21,11 @@ export default Ember.Controller.extend(SessionMixin, {
 
   actions: {
     follow: function() {
-
+      //TODO implement follow
     },
 
     unfollow: function() {
-
+      //TODO implement follow
     }
   }
 });

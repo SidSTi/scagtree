@@ -24,6 +24,10 @@ export default DS.RESTSerializer.extend({
       return item.id;
     });
 
+    json.dogs = snapshot.hasMany('dogs').map((item) => {
+      return item.id;
+    });
+
     // this, in theory, should always be false.
     if (options && options.includeId) {
       json.id = snapshot.id;

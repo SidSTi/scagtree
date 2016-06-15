@@ -8,6 +8,8 @@ export default DS.Model.extend({
   cover: DS.attr('string'),
 
   cats: DS.hasMany('cat', { async: true }),
+  dogs: DS.hasMany('dog', { async: true }),
+  
   meows: DS.hasMany('meow', { async: true}),
   following: DS.hasMany('user', {
     inverse: 'followers',

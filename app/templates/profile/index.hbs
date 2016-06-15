@@ -1,3 +1,9 @@
 <main>
-  {{meow-list meows=model}}
+  {{#if (eq model.id authenticatedUserid)}}
+    <div class="meow-add">
+      <img class="avatar" src={{model.avatar}}/>
+      <input class="meow-input card bubble" placeholder="Tell us about your cat!"/><button class="meow" {{action (action "meow")}}>Meow</button>
+    </div>
+  {{/if}}
+  {{meow-list meows=model.meows}}
 </main>

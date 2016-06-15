@@ -26,6 +26,7 @@ export default Mirage.Factory.extend({
   },
   meows: null,
   cats: null,
+  dogs: null,
   following: null,
   followers: null,
   avatar: function(i) {
